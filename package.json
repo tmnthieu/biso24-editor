@@ -1,0 +1,7 @@
+{
+  "name": "biso24-editor",
+  "version": "1.0.0",
+  "description": "Custom CKEditor4 build for Biso24 modules",
+  "files": ["CKEditor4"],
+  "license": "MIT"
+}

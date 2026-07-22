@@ -1,6 +1,6 @@
 {
   "name": "biso24-editor",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "Custom CKEditor4 build for Biso24 modules",
   "keywords": ["ckeditor", "ckeditor4", "biso24"],
   "repository": { "type": "git", "url": "git+https://github.com/tmnthieu/biso24-editor.git" },

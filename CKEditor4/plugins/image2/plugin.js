@@ -71,7 +71,8 @@
 					'max-width:100%' +
 					'}' +
 					'.cke_widget_image img{' +
-					'max-width:inherit' +
+					'max-width:inherit;' +
+					'max-height:max-content' +
 					'}',
 			);
 		},

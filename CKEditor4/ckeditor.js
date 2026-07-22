@@ -3616,7 +3616,7 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 					e =
 						e.type != CKEDITOR.NODE_ELEMENT || 0 === f || f == e.getChildCount()
 							? 0
-							: e.getChild(f - 1).type == CKEDITOR.NODE_TEXT && e.getChild(f).type == CKEDITOR.NODE_TEXT;
+							: e.getChild(f - 1)?.type == CKEDITOR.NODE_TEXT && e.getChild(f)?.type == CKEDITOR.NODE_TEXT;
 					e && ((g = g.getChild(d - 1)), (d = g.getLength()));
 					if (g.type == CKEDITOR.NODE_ELEMENT && 0 < d) {
 						a: {

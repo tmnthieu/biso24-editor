@@ -65,6 +65,13 @@
 					// Expand widget wrapper when linked inline image.
 					'.cke_widget_wrapper>a{' +
 					'display:inline-block' +
+					'}' +
+					// Keep images inside the widget within the editable width.
+					'.cke_widget_image{' +
+					'max-width:100%' +
+					'}' +
+					'.cke_widget_image img{' +
+					'max-width:inherit' +
 					'}',
 			);
 		},

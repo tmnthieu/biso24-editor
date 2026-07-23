@@ -581,6 +581,11 @@
 				handled = true;
 			// Completion keys.
 			} else if ( CKEDITOR.tools.indexOf( this.commitKeystrokes, keyCode ) != -1 ) {
+				// Only hijack the key when an item is actually selected. Otherwise let
+				// Enter/Tab behave natively (newline/indent) instead of moving the caret.
+				if ( this.model.selectedItemId == null ) {
+					return;
+				}
 				this.commit();
 				this.textWatcher.unmatch();
 				handled = true;

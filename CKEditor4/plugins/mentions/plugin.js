@@ -172,6 +172,12 @@
 				return null;
 			}
 
+			// Perf: only run the expensive DOM text match once the marker (e.g. '@')
+			// is present before the caret. Default typing skips the whole autocomplete path.
+			if (!hasMarkerBeforeCaret(range, marker)) {
+				return null;
+			}
+
 			return CKEDITOR.plugins.textMatch.match(range, matchCallback);
 		};
 
@@ -193,6 +199,21 @@
 				end: offset,
 			};
 		}
+	}
+
+	// Cheap check: is the marker character present in the text node holding the caret,
+	// before the caret offset? Avoids the heavier textMatch DOM walk on every keystroke.
+	function hasMarkerBeforeCaret(range, marker) {
+		if (!marker) {
+			return true;
+		}
+
+		var node = range.startContainer;
+		if (node.type !== CKEDITOR.NODE_TEXT) {
+			return false;
+		}
+
+		return node.getText().substring(0, range.startOffset).indexOf(marker) !== -1;
 	}
 
 	function getDataCallback(feed, mentions) {
